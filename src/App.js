@@ -3,9 +3,10 @@ import Layout from './components/layout/layout';
 
 function App() {
   return (
-    <Layout>
-      <p>Welcome to SD LAB !</p>
-    </Layout>
+    <>
+      <Layout/>
+      <p>Welcome to Strategic Digital LAB !</p>
+    </>
     
   );
 }
