@@ -13,7 +13,7 @@ import {
     DropdownItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
   
-  export default class Example extends React.Component {
+  export default class Layout extends React.Component {
     constructor(props) {
       super(props);
   
