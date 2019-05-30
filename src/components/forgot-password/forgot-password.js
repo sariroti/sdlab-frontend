@@ -47,9 +47,7 @@ class ForgotPassword extends React.Component {
                     this.props.users.payload.error = '';
                 }
                 if(this.props.users.payload.data){
-                    console.log('hehehhe',this.props.users.payload.data);
-                 
-                   
+               
                     if(this.props.users.payload.data === 'Token Valid'){
                         this.setState({
                             isValidToken:true,

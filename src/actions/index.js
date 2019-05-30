@@ -83,14 +83,12 @@ export const verifyTokenPasswordChange = (token) => async dispatch => {
 }
 export const changePassword = (user) => async dispatch => {
     const response = await axios.post(FORGOT_PASSWORD_CHANGE_URL, qs.stringify({token:user.token, password:user.password}));
-    console.log(response)
     dispatch(changePasswordDispatch(response.data.error, response.data.payload));
 }
 
 export const updateProfile = (user, token) => async dispatch => {
     config.headers.Authorization ='bearer ' + token;
     const response = await axios.put(USER_URL, qs.stringify(user), config);
-    console.log(response)
     dispatch(updateProfileDispatch(response.data.error, response.data.payload));
 }
 
