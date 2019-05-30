@@ -9,9 +9,10 @@ import './index.css';
 import App from './App';
 import Login from './components/login/login';
 import Register from './components/register/register';
+import Profile from './components/profile/profile';
+import ForgotPassword from './components/forgot-password/forgot-password';
 import reduxLogger from 'redux-logger';
 import './index.css';
-import ForgotPassword from './components/forgot-password/forgot-password';
 import * as serviceWorker from './serviceWorker';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -25,6 +26,7 @@ const wrapComponent = (
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} /> 
         <Route path="/forgot-password" component={ForgotPassword} />
+        <Route path="/profile" component={Profile} /> 
     </Router>
 )
 ReactDOM.render(
