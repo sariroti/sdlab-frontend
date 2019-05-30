@@ -9,18 +9,22 @@ import './index.css';
 import App from './App';
 import Login from './components/login/login';
 import Register from './components/register/register';
+import reduxLogger from 'redux-logger';
+import './index.css';
+import ForgotPassword from './components/forgot-password/forgot-password';
 import * as serviceWorker from './serviceWorker';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-datepicker/dist/react-datepicker.css';
 
-const store = createStore(reducers, applyMiddleware(thunk));
+const store = createStore(reducers, applyMiddleware(thunk, reduxLogger));
 
 const wrapComponent = (
     <Router>
         <Route exact path="/" component={App}/>
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} /> 
+        <Route path="/forgot-password" component={ForgotPassword} />
     </Router>
 )
 ReactDOM.render(

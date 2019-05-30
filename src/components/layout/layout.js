@@ -42,7 +42,7 @@ import { Link } from 'react-router-dom';
                   <NavLink href="/register">Register</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/register">Reset</NavLink>
+                  <NavLink href="/forgot-password">Reset</NavLink>
                 </NavItem>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
