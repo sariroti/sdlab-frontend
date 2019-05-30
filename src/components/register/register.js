@@ -105,15 +105,15 @@ class Register extends React.Component {
     }
     
     componentDidUpdate(){
-        console.log(this.props.users);
         if(Object.keys(this.props.users).length > 0){
-            if(this.props.users.payload.user && this.props.users.payload.token){
+            
+            if(this.props.users.payload){
                 alert('User Successfuly Registered!');
                 this.props.history.push('/')
             }
-            else if(this.props.users.payload != ''){
+            else if(this.props.users.payload == ''){
                 alert(`Registration failed, ${this.props.users.payload}`)
-                this.props.users.payload = '';
+                
             }
         }
         
