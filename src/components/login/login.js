@@ -34,6 +34,7 @@ class Login extends React.Component {
         if(Object.keys(this.props.users).length > 0){
             if(this.props.users.payload.user && this.props.users.payload.token){
                 alert('login success!');
+                sessionStorage.setItem('jwtToken', this.props.users.payload.token);
                 this.props.history.push('/')
             }
             else if(this.props.users.payload != ''){
