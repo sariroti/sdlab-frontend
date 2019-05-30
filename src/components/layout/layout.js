@@ -19,8 +19,11 @@ import { Link } from 'react-router-dom';
   
       this.toggle = this.toggle.bind(this);
       this.state = {
+        isLogin:sessionStorage.getItem('jwtToken') !== null,
         isOpen: false
       };
+
+      console.log(sessionStorage.getItem('jwtToken'));
     }
     toggle() {
       this.setState({
@@ -35,16 +38,16 @@ import { Link } from 'react-router-dom';
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                <NavItem>
+                <NavItem style={this.state.isLogin ? {display:'none'} : {display:''}}>
                   <NavLink href="/login">login</NavLink>
                 </NavItem>
-                <NavItem>
+                <NavItem style={this.state.isLogin ? {display:'none'} : {display:''}}>
                   <NavLink href="/register">Register</NavLink>
                 </NavItem>
-                <NavItem>
+                <NavItem style={this.state.isLogin ? {display:'none'} : {display:''}}>
                   <NavLink href="/forgot-password">Reset</NavLink>
                 </NavItem>
-                <UncontrolledDropdown nav inNavbar>
+                <UncontrolledDropdown nav inNavbar style={this.state.isLogin ? {display:''} : {display:'none'}}>
                   <DropdownToggle nav caret>
                     Me
                   </DropdownToggle>
