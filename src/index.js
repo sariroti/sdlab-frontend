@@ -4,20 +4,23 @@ import {Route, BrowserRouter as Router} from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
+import reduxLogger from 'redux-logger';
 import reducers from './reducers/';
 import './index.css';
 import App from './App';
 import Login from './components/login/login';
+import ForgotPassword from './components/forgot-password/forgot-password';
 import * as serviceWorker from './serviceWorker';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const store = createStore(reducers, applyMiddleware(thunk));
+const store = createStore(reducers, applyMiddleware(thunk, reduxLogger));
 
 const wrapComponent = (
     <Router>
         <Route exact path="/" component={App}/>
         <Route path="/login" component={Login} />
+        <Route path="/forgot-password" component={ForgotPassword} />
     </Router>
 )
 ReactDOM.render(
