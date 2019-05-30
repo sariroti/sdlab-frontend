@@ -30,7 +30,7 @@ class Login extends React.Component {
     }
 
     componentDidUpdate(){
-        console.log(this.props.users);
+      
         if(Object.keys(this.props.users).length > 0){
             if(this.props.users.payload.user && this.props.users.payload.token){
                 alert('login success!');

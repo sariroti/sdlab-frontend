@@ -23,7 +23,6 @@ import { Link } from 'react-router-dom';
         isOpen: false
       };
 
-      console.log(sessionStorage.getItem('jwtToken'));
     }
     toggle() {
       this.setState({
