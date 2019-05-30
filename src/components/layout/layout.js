@@ -52,9 +52,6 @@ import { Link } from 'react-router-dom';
                     <DropdownItem>
                       <Link to="/profile">Profile</Link>
                     </DropdownItem>
-                    <DropdownItem>
-                    <Link to="/logout">Logout</Link>
-                    </DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
               </Nav>
