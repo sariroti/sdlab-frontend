@@ -27,21 +27,16 @@ class Profile extends React.Component {
             suggestions:'',
             willRecommend:false,
             avatar:'',
-            token:'',
+            token:sessionStorage.getItem('jwtToken'),
             message:'',
             dropdownOpen:false,
             isStep2:false
         }
-
-        console.log(props);
     };
 
     componentWillMount(){
-        const token = this.props.users.payload.token;
-        this.setState({
-            token
-        })
-        this.props.getProfile(token);
+      
+        this.props.getProfile(this.state.token);
     }
 
     componentDidUpdate(){
@@ -137,7 +132,6 @@ class Profile extends React.Component {
     }
 
     submit = () => {
-        console.log(this.state.token);
         const user = {
             firstName:this.state.firstName,
             lastName:this.state.lastName,
